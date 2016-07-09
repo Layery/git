@@ -1,0 +1,80 @@
+
+/**
+ * 工作区和缓存区
+ */
+工作区: 电脑里能直观看到的文件夹
+缓存区: 调用git add 命令后, 文件的改动信息被记录到git的缓存区, 
+
+
+
+
+
+/**
+ * git常用命令:
+ */
+git init : 初始化一个本地的代码仓库,然后git可以对该目录下的文件进行版本跟踪, 初始化后, git默认创建一个本地的master分支
+git add : 将修改的文件 , 实际上就是把文件修改添加到暂存区；
+git add . : 一次性添加所有的文件, 
+
+git commit -m '' : 将本次修改的文件提交到本地版本控制系统中(实际上就是把暂存区的所有内容提交到当前分支。) , -m 
+                  面为本次修改的简短注释
+
+git checkout --filename.php : 把filename.php文件在工作区的修改全部撤销掉, 两种情况:
+                              一种是filename.php自修改后还没有被放到暂存区，现在，撤销修改就回到和版本库一模一样的状态；
+                              一种是filename.php已经添加到暂存区后，又作了修改，现在，撤销修改就回到添加到暂存区后的状态。
+
+git reset HEAD filename :  将暂存区中的修改,撤销掉, 重新放回工作区, 
+git reflog branchname               : 拉出分支所有提交日志
+git config --global alias.st status  :    配置status命令的简写形式
+
+
+/**
+ * 本地仓库关联远程仓库
+ */
+[
+    ssh-keygen  -t  rsa  -C  "绑定git的邮箱地址"                :  首先在本地生成ssh密钥
+    打开本地磁盘路径 C:\Users\未定义\.ssh\id_rsa.pub文件, 复制秘钥到github.com的SSH keys 中
+]
+git remote add origin git@github.com:git用户名/项目名称.git :　本地仓库与远程仓库相关联
+ssh git@github.com                                          :  查看是否连接上
+git clone git@github.com:Layery/class.git                   :  克隆远程项目到本地
+git pull origin 分支名称                                    :  将远程项目的一个分支拉到本地. 
+git push origin 分支名称                                    :  将本地项目的一个分支推送到远程项目分支上.
+git branch —set-upstream branchname origin/branchname                 :　绑定本地分支和远程分支的关联
+
+
+/**
+ * 分支管理：
+ */
+git branch -a        : 查看所有分支, 包括本地/远程
+git branch branchname: 创建分支　
+git checkout -b test : 创建test分支, 并将当前分支切换到test分支上, 
+git branch -d branchname: 删除分支, 
+git branch           : 命令会列出所有分支，当前分支前面会标一个*号。
+git checkout branchname:   切换当前分支到branchname分支
+git merge branchname : 当前在master分支上时 , 调用该命令, 合并branchname分支, 
+git stash 　　　　　 : 将分支临时改动寄存下来，并不真正提交（可以进行 checkout其他分支或者拉代码）
+git checkout -b branchname origin/branchname :  从远程的branchname分支上拉一个分支到本地, 
+
+/**
+ * 遇见的问题 
+ */
+第一次向上推送时, git一直报错提示:fatal: remote origin already exists , 无法调用 git remote add 命令向上提交 , 
+解决:
+    
+    git remote rm origin  //删除线上origin分支
+    git remote add origin git....      // 再次调用该命令不再报错
+
+push之前,先把线上代码拉一下,确保不报错
+    git pull origin branchname
+    git push origin branchname
+
+
+
+git stash pop 将分支临时改动寄存下来内容恢复出来
+
+
+
+
+
+
