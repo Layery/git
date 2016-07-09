@@ -40,7 +40,7 @@ ssh git@github.com                                          :  查看是否连�
 git clone git@github.com:Layery/class.git                   :  克隆远程项目到本地
 git pull origin 分支名称                                    :  将远程项目的一个分支拉到本地. 
 git push origin 分支名称                                    :  将本地项目的一个分支推送到远程项目分支上.
-git branch —set-upstream branchname origin/branchname                 :　绑定本地分支和远程分支的关联
+git branch --set-upstream branchname origin/branchname                 :　绑定本地分支和远程分支的关联
 
 
 /**
