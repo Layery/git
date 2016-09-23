@@ -76,6 +76,21 @@ push之前,先把线上代码拉一下,确保不报错
 git stash pop 将分支临时改动寄存下来内容恢复出来
 
 
+/**
+ * 从远程master切一个分支到本地
+ */
+###################################################################################################################
+1: git checkout -b branchnameB origin/branchnameA  // 从远程branchnameA分支切一个分支到本地取名branchnameB
+
+2: git checkout master               // 切换到本地master分支
+   git fetch                         // 更新本地分支(不指定分支名称,默认fetch的是线上的master)
+   git pull origin master            // 将线上master分支拉到本地master分支
+   git checkout -b localbranch       // 从本地master分支切一个分支到本地localbranch分支
+
+以上这两种方法效果一样吗? 有啥不同?
+
+###################################################################################################################
+
 
 
 
