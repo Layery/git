@@ -32,31 +32,31 @@ git config --global alias.st status  :    配置status命令的简写形式
  * 本地仓库关联远程仓库
  */
 [
-    ssh-keygen  -t  rsa  -C  "绑定git的邮箱地址"                :  首先在本地生成ssh密钥
-    打开本地磁盘路径 C:\Users\未定义\.ssh\id_rsa.pub文件, 复制秘钥到github.com的SSH keys 中
+    ssh-keygen  -t  rsa  -C  "绑定git的邮箱地址"            :  首先在本地生成ssh密钥
+    (打开本地磁盘路径 C:\Users\未定义\.ssh\id_rsa.pub文件, 复制秘钥到github.com的SSH keys 中)
 ]
 git remote add origin git@github.com:git用户名/项目名称.git :　本地仓库与远程仓库相关联
 ssh git@github.com                                          :  查看是否连接上
 git clone git@github.com:Layery/class.git                   :  克隆远程项目到本地
 git pull origin 分支名称                                    :  将远程项目的一个分支拉到本地. 
 git push origin 分支名称                                    :  将本地项目的一个分支推送到远程项目分支上.
-git branch —set-upstream branchname origin/branchname                 :　绑定本地分支和远程分支的关联
+git branch —set-upstream branchname origin/branchname       :　绑定本地分支和远程分支的关联
 
 
 /**
  * 分支管理：
  */
-git branch -a        : 查看所有分支, 包括本地/远程
-git branch branchname: 创建分支　
-git checkout -b test : 创建test分支, 并将当前分支切换到test分支上, 
-git branch -d branchname: 删除分支, 
-git branch           : 命令会列出所有分支，当前分支前面会标一个*号。
-git checkout branchname:   切换当前分支到branchname分支
-git merge branchname : 当前在master分支上时 , 调用该命令, 合并branchname分支, 
-git stash 　　　　　 : 将分支临时改动寄存下来，并不真正提交（可以进行 checkout其他分支或者拉代码）
-git checkout -b branchname origin/branchname :  从远程的branchname分支上拉一个分支到本地, 
-git push --delete origin branchname          :  删除远程分支
-
+git branch -a                                               : 查看所有分支, 包括本地/远程
+git branch branchname                                       : 创建分支　
+git checkout -b test                                        : 创建test分支, 并将当前分支切换到test分支上, 
+git branch                                                  : 命令会列出所有分支，当前分支前面会标一个*号。
+git checkout branchname                                     : 切换当前分支到branchname分支
+git merge branchname                                        : 当前在master分支上时 , 调用该命令, 合并branchname分支, 
+git stash 　　　　　                                        : 将分支临时改动寄存下来，并不真正提交（可以进行 checkout其他分支或者拉代码）
+git stash pop                                               : 将分支临时改动寄存下来内容恢复出来
+git checkout -b branchname origin/branchname                : 从远程的branchname分支上拉一个分支到本地, 
+git branch -d branchname                                    : 删除分支, -D(大写)代表强制删除
+git push --delete origin branchname                         : 删除远程分支
 
 /**
  * 遇见的问题 
@@ -73,7 +73,6 @@ push之前,先把线上代码拉一下,确保不报错
 
 
 
-git stash pop 将分支临时改动寄存下来内容恢复出来
 
 
 /**
@@ -90,8 +89,5 @@ git stash pop 将分支临时改动寄存下来内容恢复出来
 以上这两种方法效果一样吗? 有啥不同?
 
 ###################################################################################################################
-
-
-
 
 
