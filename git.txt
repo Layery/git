@@ -6,7 +6,13 @@
 缓存区: 调用git add 命令后, 文件的改动信息被记录到git的缓存区, 
 
 
-
+/**
+ * git常用配置命令
+ */
+git config --global user.name                              :  配置用户名
+git config --global user.email                             :  配置用户邮箱
+git config --list                                          :  查看已设配置
+git config --global credential.helper store                :  避免每次提交都输入用户名密码
 
 
 /**
