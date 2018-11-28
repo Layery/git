@@ -35,6 +35,14 @@ git config --global alias.st status  :    配置status命令的简写形式
 
 
 /**
+* git切换源
+*/
+git remote rm origin           // 删除远程分支
+git remote add origin git@github.com:xxxxx/learngit.git             // 添加新的远程分支
+git push -u origin master     // 把当前分支推送到新的远程分支上
+
+
+/**
  * 本地仓库关联远程仓库
  */
 [
