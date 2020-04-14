@@ -1,4 +1,12 @@
 
+
+git 修改账号密码后, pull, clone, push 提示Authentication failed for
+执行以下命令: 
+1. git config –-global –-unset credential.helper
+2. 如果用了第一个命令 还不能解决问题那么 用这个命令： 
+git config –-global http.emptyAuth true
+3. windows控制面板, 控制面板\用户帐户\凭据管理器, 删除git项目相关的凭证, 重新输入账号密码
+
 /**
  * 工作区和缓存区
  */
