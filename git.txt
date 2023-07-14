@@ -21,6 +21,8 @@ git config --global user.name                              :  配置用户名
 git config --global user.email                             :  配置用户邮箱
 git config --list                                          :  查看已设配置
 git config --global credential.helper store                :  避免每次提交都输入用户名密码
+git config alias.ck checkout                               :  为checkout配置ck别名
+git config --unset alias.ck                                :  删除ck别名
 
 
 /**
