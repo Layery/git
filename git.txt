@@ -27,7 +27,12 @@ git config --global credential.helper store                :  避免每次提交
  * git常用命令:
  */
 
+// git log 查看时, 不能直观的显示出修改了哪些文件, 加入--name-status即可
+// 可以将此加入别名, 使其更方便
+git log --name-status
+git config alias.lg "log --name-status"
 
+// 提交某个commit, 到当前分支下
 git cherry-pick COMMIT_ID : 提交某个commit, 到当前分支下;
 
 // 忽略文件权限的配置，具体如下
